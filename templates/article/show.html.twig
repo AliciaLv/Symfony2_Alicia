@@ -9,13 +9,11 @@
 </style>
 
 <div class="produit">
-    {% for article in pages %}
-        <h3><a href="/article/{{article.id}}">{{ article.title }}</a></h3>
-        <p>{{article.content|slice(0, 300)}} <a href="/article/{{article.id}}">... voir plus</a></p>
+        <h3>{{ article.title }}</h3>
+        <p>{{article.content}}</p>
         <p>Ecrit par {{article.author}} le {{article.createdAt|date('d/m/Y')}}</p>
-    {% endfor %}
+        <a href="/article">Retour à la page d'accueil..</a>
 </div>
-{{ knp_pagination_render(pages) }}
 
 
 {% endblock %}
